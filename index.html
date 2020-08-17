@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<title>Sharpen your math skills!</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		
+	</head>
+
+	<body>
+
+		<div>
+			<!--information about the page-->
+			<p>Math Program</p>
+			<p>by Nima Rahmanian, Jon Jon Mesh, and Jaden Elkins</p>
+		</div>
+
+		<div class="dropdown">
+		  <button onclick="toggleFunc('categoryDropDown')" class="dropbtn" id = "categoryButton">Select Class</button>
+		  <div id="categoryDropDown" class="dropdown-content">
+		    <button onclick = "updateMenu('categoryButton', 'Algebra 1')" id = "dropOption">Algebra 1</button>
+		    <button onclick = "updateMenu('categoryButton', 'Algebra 2')" id = "dropOption">Algebra 2</button>
+		    <button onclick = "updateMenu('categoryButton', 'Calculus A')" id = "dropOption">Calculus A</button>
+		    <button onclick = "updateMenu('categoryButton', 'Calculus B')" id = "dropOption">Calculus B</button>
+
+
+		  </div>
+		</div>
+
+		<div class="dropdown">
+		  <button onclick="toggleFunc('categoryDependent')" class="dropbtn" id = "itemButton">Select Topic</button>
+		  <div class="dropdown-content" id = "categoryDependent">
+		  	<!--there will be buttons placed here by updateMenu-->
+		  </div>
+		</div>
+
+		<br><br>
+		<label for="fname">First name:</label>
+		<input type="text" id="fname" name="fname"><br><br>
+		<label for="lname">Last name:</label>
+		<input type="text" id="lname" name="lname"><br><br>
+
+		<button onclick = "alert('Generate PDF')">Generate PDF</button>
+
+
+		<script src="script.js"></script>
+
+		<!--Firebase-->
+		<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+
+
+		<script src="/__/firebase/7.18.0/firebase-app.js"></script>
+		<script src="/__/firebase/7.18.0/firebase-analytics.js"></script>
+		<script src="/__/firebase/7.18.0/firebase-auth.js"></script>
+		<script src="/__/firebase/7.18.0/firebase-firestore.js"></script>
+		<script src="/__/firebase/7.18.0/firebase-database.js"></script>
+
+		<!-- Initialize Firebase -->
+		<script src="/__/firebase/init.js"></script>
+
+
+		<script src="firebase.js"></script>
+		<script src="script.js"></script>
+
+
+	</body>
+
+</html>
