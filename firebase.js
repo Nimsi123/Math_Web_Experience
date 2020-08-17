@@ -14,7 +14,7 @@ measurementId: "G-JGSPK5H191"
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
-alert("ok");
+//alert("ok");
 
 
 /*
