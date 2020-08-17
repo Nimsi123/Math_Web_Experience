@@ -58,10 +58,10 @@ function updateMenu(ID, titulo){
 
 }
 
-function simpleHTMLChange(ropa){
+function simpleHTMLChange(ID, ropa){
   //returns the function for a button
   return function(){
-    document.getElementById('itemButton').innerHTML = ropa;
+    document.getElementById(ID).innerHTML = ropa;
   }
 }
 
@@ -76,7 +76,7 @@ function displayItems(itemList){
 
     var para = document.createElement("button");
 
-    para.onclick = simpleHTMLChange(ropa);
+    para.onclick = simpleHTMLChange('topicButton', ropa);
     para.id = "dropOption";
     para.innerHTML = ropa;
 
@@ -88,8 +88,17 @@ function displayItems(itemList){
 
 function generatePDF(){
   //get the first and last names
+  /*
+  var firstName = document.getElementById("fname").value;
+  var lastName = document.getElementById("lname").value;
+  */
+  var fullName = document.getElementById("fname").value + document.getElementById("lname").value;
 
-  //get the class and topic selections
+  //get the class, topic, and number of question selections
+  var className = document.getElementById("classButton");
+  var topicName = document.getElementById("topicButton");
+  var numQuestions = document.getElementById("questionButton");
 
   //display data
+  alert('Generate PDF');
 }

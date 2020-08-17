@@ -10,35 +10,49 @@
 		<div>
 			<!--information about the page-->
 			<p>Math Program</p>
-			<p>by Nima Rahmanian, Jon Jon Mesh, and Jaden Elkins</p>
+			<p>by Nima Rahmanian, Jon Jon Mesh, Jaden Elkins, and Daniel Etaat</p>
 		</div>
 
 		<div class="dropdown">
-		  <button onclick="toggleFunc('categoryDropDown')" class="dropbtn" id = "categoryButton">Select Class</button>
-		  <div id="categoryDropDown" class="dropdown-content">
-		    <button onclick = "updateMenu('categoryButton', 'Algebra 1')" id = "dropOption">Algebra 1</button>
-		    <button onclick = "updateMenu('categoryButton', 'Algebra 2')" id = "dropOption">Algebra 2</button>
-		    <button onclick = "updateMenu('categoryButton', 'Calculus A')" id = "dropOption">Calculus A</button>
-		    <button onclick = "updateMenu('categoryButton', 'Calculus B')" id = "dropOption">Calculus B</button>
+		  <button onclick="toggleFunc('ClassNames')" class="dropbtn" id = "classButton">Select Class</button>
+		  <div class="dropdown-content" id="ClassNames">
+		    <button onclick = "updateMenu('classButton', 'Algebra 1');" id = "dropOption">Algebra 1</button>
+		    <button onclick = "updateMenu('classButton', 'Algebra 2');" id = "dropOption">Algebra 2</button>
+		    <button onclick = "updateMenu('classButton', 'Calculus A');" id = "dropOption">Calculus A</button>
+		    <button onclick = "updateMenu('classButton', 'Calculus B');" id = "dropOption">Calculus B</button>
 
 
 		  </div>
 		</div>
 
 		<div class="dropdown">
-		  <button onclick="toggleFunc('categoryDependent')" class="dropbtn" id = "itemButton">Select Topic</button>
+		  <button onclick="toggleFunc('categoryDependent')" class="dropbtn" id = "topicButton">Select Topic</button>
 		  <div class="dropdown-content" id = "categoryDependent">
 		  	<!--there will be buttons placed here by updateMenu-->
 		  </div>
 		</div>
 
 		<br><br>
-		<label for="fname">First name:</label>
-		<input type="text" id="fname" name="fname"><br><br>
-		<label for="lname">Last name:</label>
-		<input type="text" id="lname" name="lname"><br><br>
+		<div class = "User_input">
+			<label for="fname">First name:</label>
+			<input type="text" id="fname" name="fname"><br><br>
+			<label for="lname">Last name:</label>
+			<input type="text" id="lname" name="lname"><br><br>
+		</div>
 
-		<button onclick = "alert('Generate PDF')">Generate PDF</button>
+		<div class="dropdown">
+		  <button onclick="toggleFunc('NumQuestions')" class="dropbtn" id = "questionButton">Select Number of Questions</button>
+		  <div class="dropdown-content" id="NumQuestions">
+		    <button onclick = "document.getElementById('questionButton').innerHTML = '5 questions';" id = "dropOption">5 questions</button>
+		    <button onclick = "document.getElementById('questionButton').innerHTML = '10 questions';" id = "dropOption">10 questions</button>
+		    <button onclick = "document.getElementById('questionButton').innerHTML = '15 questions';" id = "dropOption">15 questions</button>
+		    <button onclick = "document.getElementById('questionButton').innerHTML = '20 questions';" id = "dropOption">20 questions</button>
+
+
+		  </div>
+		</div>
+
+		<button onclick = "generatePDF()">Generate PDF</button>
 
 
 		<script src="script.js"></script>
