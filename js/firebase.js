@@ -1,3 +1,4 @@
+/*
 // Your web app's Firebase configuration
 var firebaseConfig = {
 apiKey: "AIzaSyD3u8ClnrlQmWkuwIEfdPtVXiTBEF1FoyQ",
@@ -16,15 +17,15 @@ var db = firebase.firestore();
 
 //alert("ok");
 
+alert("ok");
 
-/*
-db.collection("Factoring")
+db.collection("FOIL").where("number", ">", "3")
 .get()
 .then(function(querySnapshot) {
 	questionMessage = "";
 	answerMessage = "";
         querySnapshot.forEach(function(doc) {
-            questionMessage += doc.data()["question"];
+            questionMessage += doc.data()["problem"];
             answerMessage += doc.data()["answer"];
         });
     alert(questionMessage);
