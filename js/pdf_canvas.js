@@ -17,7 +17,7 @@ var db = firebase.firestore();
 
 
 function genPDF(){
-<<<<<<< HEAD
+
 	db.collection("Rational Number Operations")
 	.get()
 	.then(function(querySnapshot) {
