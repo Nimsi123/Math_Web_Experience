@@ -17,6 +17,7 @@ var db = firebase.firestore();
 
 
 function genPDF(){
+<<<<<<< HEAD
 	db.collection("Rational Number Operations")
 	.get()
 	.then(function(querySnapshot) {
@@ -28,7 +29,6 @@ function genPDF(){
 
 			var leftLim = 9;
 			var rightLim = 18;
-
 			
 	        querySnapshot.forEach(function(doc) {
 	        	//alert(count);
@@ -37,6 +37,7 @@ function genPDF(){
 
 				//'<div>  <div style= "float:left; left:0%;"><p>1) </p></div> <div style = "width:20%; float:left;"><p>$$\sqrt{19}$$</p></div>  </div><br><br><br><br>'
 				//'<div>  <div style= "float:left; left:0%;"><p>1) </p></div> <div style = "width:20%; float:left;"><p>' +  + '</p></div>  </div><br><br><br><br>'
+
 				//The LaTeX parts need space from one another. Achieve this by adding many line breaks
 				
 				//if ((count + displacement) > 30){alert(count+displacement);}

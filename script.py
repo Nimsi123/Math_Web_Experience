@@ -29,3 +29,4 @@ genList = [Algebra1_A_to_C.RationalNumberOperations(-12, 12, "+")]
 
 questionDump = FirebasePlugIn()
 questionDump.addAlgorithm(genList[0], genList[0].name, 40)
+
