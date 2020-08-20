@@ -97,4 +97,25 @@ function genPDF(){
 
 	        });
 	    });
+	//MathJax.Hub.Queue(["Typeset",MathJax.Hub, "math"]);
+	//alert("done");
+	alert("one");
+	(function () {
+		  var script = document.createElement("script");
+		  script.type = "text/javascript";
+		  script.src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";   // use the location of your MathJax
+
+		  var config = `MathJax.Hub.Config({ config: "MathJax.js",
+		  									tex2jax: { inlineMath: [['$', '$']] },
+		    								elements: ['math']
+		   									}); ` + 'MathJax.Hub.Startup.onload();';
+
+		  if (window.opera) {script.innerHTML = config}
+		               else {script.text = config}
+
+		  document.getElementsByTagName("head")[0].appendChild(script);
+		})();	
+	alert("n");
+	MathJax.Hub.Queue(["Typeset",MathJax.Hub, "math"]);
+	alert("done");
 }
