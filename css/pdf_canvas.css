@@ -1,13 +1,13 @@
-@media print {
-  footer {
-  	page-break-after: always;
+/*
+footer {
+  	page-break-before: always;
 	position: fixed;
 	left: 0;
 	bottom: 0;
 	width: 100%;
 	color: white;
 	text-align: center;
-  }
 }
+*/
 
-#question_block #answer_block {page-break-after:always}
+#page {page-break-after:always}
