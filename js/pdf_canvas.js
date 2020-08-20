@@ -15,6 +15,11 @@ measurementId: "G-JGSPK5H191"
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
+function dumpElement(blockIdentifier, questionNumber, data){
+	// style = "width:80%; float:left;"
+	document.getElementById(blockIdentifier).innerHTML += `<p style= "float:left; left:0%;">` + (questionNumber + ')') + `</p> 
+															<p id = "math">` + data + `</p> <br><br><br><br>`;
+}
 
 function genPDF(){
 
@@ -31,37 +36,35 @@ function genPDF(){
 			var rightLim = 18;
 			
 	        querySnapshot.forEach(function(doc) {
-	        	//alert(count);
-	        	//var question = "<p>" + doc.data()["problem"] + "</p><br>"
-	        	//var answer = "<p>" + doc.data()["answer"] + "</p><br>"
-
-				//'<div>  <div style= "float:left; left:0%;"><p>1) </p></div> <div style = "width:20%; float:left;"><p>$$\sqrt{19}$$</p></div>  </div><br><br><br><br>'
-				//'<div>  <div style= "float:left; left:0%;"><p>1) </p></div> <div style = "width:20%; float:left;"><p>' +  + '</p></div>  </div><br><br><br><br>'
 
 				//The LaTeX parts need space from one another. Achieve this by adding many line breaks
-				
-				//if ((count + displacement) > 30){alert(count+displacement);}
-				
-				
 
 				if (count < leftLim){
 					//alert("lqb" + (Math.floor((count+displacement)/18)));
-	            	document.getElementById("lqb" + blockCounter).innerHTML += '<div>  <div style= "float:left; left:0%;"><p>' + (count+displacement+1) + ')' + ' ' + '</p></div> <div style = "width:80%; float:left;"><p>' + doc.data()["problem"] + '</p></div>  </div><br><br><br><br>';
-	            	document.getElementById("lab" + blockCounter).innerHTML += '<div>  <div style= "float:left; left:0%;"><p>' + (count+displacement+1) + ')' + ' ' + '</p></div> <div style = "width:80%; float:left;"><p>' + doc.data()["answer"] + '</p></div>  </div><br><br><br><br>';
+	            	dumpElement( ("lqb" + blockCounter), (count+displacement+1), doc.data()["problem"]);
+	            	dumpElement( ("lab" + blockCounter), (count+displacement+1), doc.data()["answer"]);
 	            	}
 
 	            else if (count < rightLim){
 	            	//alert("rqb" + (Math.floor((count+displacement)/18)));
-	            	document.getElementById("rqb" + blockCounter).innerHTML += '<div>  <div style= "float:left; left:0%;"><p>' + (count+displacement+1) + ')' + ' ' + '</p></div> <div style = "width:80%; float:left;"><p>' + doc.data()["problem"] + '</p></div>  </div><br><br><br><br>';
-	            	document.getElementById("rab" + blockCounter).innerHTML += '<div>  <div style= "float:left; left:0%;"><p>' + (count+displacement+1) + ')' + ' ' + '</p></div> <div style = "width:80%; float:left;"><p>' + doc.data()["answer"] + '</p></div>  </div><br><br><br><br>';
+	            	dumpElement( ("rqb" + blockCounter), (count+displacement+1), doc.data()["problem"]);
+	            	dumpElement( ("rab" + blockCounter), (count+displacement+1), doc.data()["answer"]);
 	            	}
 	            
 	            else if (count >= rightLim){
 	            	//make a new page
 	            	//	add div blocks for questions and answers
-	            	//alert("alo");
+
 	            	blockCounter+= 1;
-	            	
+	            	count = -1; //to offset the upcoming count += 1;
+	            	displacement += displacementFactor;
+
+	            	//with the info part out of the way, we can fit more questions into the page!
+	            	leftLim = 13;
+	            	rightLim = 26;
+	            	displacementFactor = 26;
+
+
 	            	document.getElementById("question_block").innerHTML += `		
 	            	<div id = "page">		
 			            <div id = ` + ("lqb" + blockCounter) + ` style = "float:left; width:50%;">
@@ -71,6 +74,7 @@ function genPDF(){
 						</div>
 
 						<footer>Footer</footer>
+						<p style = 'page-break-after:always;'>Page break</p>
 					</div>
 					`;
 
@@ -83,16 +87,9 @@ function genPDF(){
 						</div>
 
 						<footer>Footer</footer>
+						<p style = 'page-break-after:always;'>Page break</p>
 					</div>
 					`;
-
-	            	count = -1; //to offset the upcoming count += 1;
-	            	displacement += displacementFactor;
-
-	            	//with the info part out of the way, we can fit more questions into the page!
-	            	leftLim = 13;
-	            	rightLim = 26;
-	            	displacementFactor = 26;
 	            }
 	            
 

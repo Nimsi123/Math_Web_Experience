@@ -2,30 +2,45 @@
 	<head>
 		<title>Testing web PDF generator</title>
 		<link rel="stylesheet" type="text/css" href="../css/pdf_canvas.css">
+
+
+		<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+		    tex2jax: { inlineMath: [['$', '$']] },
+		    elements: ['math']
+		  });
+		</script>
+
+	  	
 	</head>
 
 	<body>
 		<button onclick = "genPDF()">Click Me!</button>
 
 		<div id = "pdf">
-			<div id = "info block" style = "height:20%;">
+
+
+			<div id = "info block" style = "height:10%;">
 
 				<div style = "float:left;width:50%;">
 					<p>Project Name</p><br>
+					<p id = "math">$-\frac{2}{3}$</p>
 				</div>
 
 				<div style = "float:left;width:50%;">
 					<p style="line-height:16px">Name:_________________________________</p>
 					<p style="line-height:16px">Date:_________________________________</p>
 				</div>
-				
-				<h2 style = "text-align: center;">Question</h2>
-				<h4 style = "text-align: center;">Topic Name(s)</h4>
 
 			</div>
 
+			<!--Dump all the questions here-->
+			<div id = "question_block">
 
-			<div id = "question_block" style = "height:80%;">
+				<h2 style = "text-align: center;">Question</h2>
+				<h4 style = "text-align: center;">Topic Name(s)</h4>
 
 				<div id = "page">
 					<div id = "lqb0" style = "float:left; width:50%;">
@@ -35,17 +50,15 @@
 					</div>
 
 					<footer>Footer</footer>
+					<p style = 'page-break-after:always;'>Page break</p>
 				</div>
-
-
 
 			</div>
 
-			
-
-			<h1 style = "text-align: center;">Answer</h1>
-
+			<!--Dump all the answers here-->
 			<div id = "answer_block">
+
+				<h2 style = "text-align: center;">Answer</h2>
 
 				<div id = "page">
 					<div id = "lab0" style = "float:left;width:50%;">
@@ -54,12 +67,10 @@
 					</div>
 
 					<footer>Footer</footer>
+					<p style = 'page-break-after:always;'>Page break</p>
 				</div>
 
-
-			</div>
-
-			
+			</div>			
 
 		</div>
 
@@ -80,12 +91,14 @@
 		<h1>Testing</h1>
 		-->
 
-
+		<!--
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-		<script id="MathJax-script" async
-		        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		-->
+
+
 
 		<!--Firebase-->
 		<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>

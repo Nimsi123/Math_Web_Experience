@@ -12,4 +12,5 @@ footer {
 }
 */
 
-#page {page-break-after:always}
+#question_block #page {page-break-after:always}
+#answer_block {page-break-after:always}
