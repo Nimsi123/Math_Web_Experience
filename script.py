@@ -2,7 +2,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 
-from Math_Program.Algorithms_Verification import Algebra1_A_to_C
+from Math_Program.Algorithms_Verification import Algebra1_Nima
 
 class FirebasePlugIn:
 	def __init__(self):
@@ -25,8 +25,8 @@ class FirebasePlugIn:
 #genList = [Algorithms.Addition(100, 800), Algorithms.Subtraction(100, 800), Algorithms.MultDivRules(-40, 40), 
 #			Algorithms.Multiplication(7, 12), Algorithms.Division(2, 12)]
 
-genList = [Algebra1_A_to_C.RationalNumberOperations(-12, 12, "+")]
+genList = [Algebra1_Nima.RationalNumberOperations(-12, 12, "+"), Algebra1_Nima.Roots(1, 12, 2)]
 
 questionDump = FirebasePlugIn()
-questionDump.addAlgorithm(genList[0], genList[0].name, 10)
+questionDump.addAlgorithm(genList[0], genList[0].name, 60)
 

@@ -3,23 +3,25 @@
 		<title>Testing web PDF generator</title>
 		<link rel="stylesheet" type="text/css" href="../css/pdf_canvas.css">
 
-	  	
 	</head>
 
 	<body>
-		<button onclick = "genPDF()">Click Me!</button>
+
 
 		<div id = "pdf">
 
 
-			<div id = "info block" style = "height:10%;">
+			<div id = "info block" style = "height:15%;">
 
-				<div style = "float:left;width:50%;">
-					<p>Project Name</p><br>
-					<p id = "math">$-\frac{2}{3}$</p>
+				<div id = "project and question info" style = "float:left;width:50%;">
+					<!--<p>$\sqrt[2]{324}$</p>-->
+					<p style="line-height:16px">Project Name</p>
+					<p style="line-height:16px">Question</p>
+					<p style="line-height:16px">Topic Name(s)</p>
 				</div>
 
 				<div style = "float:left;width:50%;">
+
 					<p style="line-height:16px">Name:_________________________________</p>
 					<p style="line-height:16px">Date:_________________________________</p>
 				</div>
@@ -29,40 +31,40 @@
 			<!--Dump all the questions here-->
 			<div id = "question_block">
 
-				<h2 style = "text-align: center;">Question</h2>
-				<h4 style = "text-align: center;">Topic Name(s)</h4>
-
-				<div id = "page">
+				<div class = "page" style = "height:85%;">
 					<div id = "lqb0" style = "float:left; width:50%;">
 					</div>
 
-					<div id = "rqb0" style = "float:left; width:50%;">
+					<div id = "rqb0" style = "float:right; width:50%;">
 					</div>
 
-					<footer>Footer</footer>
-					<p style = 'page-break-after:always;'>Page break</p>
+					<div class="pagebreak"> </div>
 				</div>
 
 			</div>
 
+			<div class="pagebreak"> </div>
+
 			<!--Dump all the answers here-->
 			<div id = "answer_block">
+				<h2 style = "text-align: center;">Answers</h2>
 
-				<h2 style = "text-align: center;">Answer</h2>
-
-				<div id = "page">
+				<div class = "page">
 					<div id = "lab0" style = "float:left;width:50%;">
 					</div>
 					<div id = "rab0" style = "float:left;width:50%;">
 					</div>
 
-					<footer>Footer</footer>
-					<p style = 'page-break-after:always;'>Page break</p>
+					<div class="pagebreak"> </div>
 				</div>
 
 			</div>			
 
 		</div>
+
+		<button onclick = "genPDF()">Click Me!</button>
+		<button onclick = "cutFat();">Reduce Me!</button>
+		<button onclick = "dynamicMathJax();">Refresh Me!</button>
 
 		<!--
 		<h1>Question</h1>

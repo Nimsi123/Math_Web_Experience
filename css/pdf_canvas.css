@@ -10,7 +10,15 @@ footer {
 	text-align: center;
 
 }
+
+
+#question_block .page {page-break-after:always}
+#answer_block {page-break-before:always}
 */
 
-#question_block #page {page-break-after:always}
-#answer_block {page-break-after:always}
+@media print {
+    .pagebreak {
+        clear: both;
+        page-break-after: always;
+    }
+}
