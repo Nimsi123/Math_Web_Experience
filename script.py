@@ -28,5 +28,5 @@ class FirebasePlugIn:
 genList = [Algebra1_Nima.RationalNumberOperations(-12, 12, "+"), Algebra1_Nima.Roots(1, 12, 2)]
 
 questionDump = FirebasePlugIn()
-questionDump.addAlgorithm(genList[0], genList[0].name, 60)
+questionDump.addAlgorithm(genList[0], genList[0].name, 15000)
 

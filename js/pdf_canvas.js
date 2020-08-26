@@ -88,7 +88,7 @@ function dumpElement(blockIdentifier, questionNumber, data){
 
 function genPDF(){
 
-	db.collection("Rational Number Operations Addition")
+	db.collection("Rational Number Operations")
 	.get()
 	.then(function(querySnapshot) {
 			var count = 0;
