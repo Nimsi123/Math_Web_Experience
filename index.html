@@ -1,83 +1,122 @@
-<html>
-	<head>
-		<title>Sharpen your math skills!</title>
-		<link rel="stylesheet" type="text/css" href="css/headquarters.css">
-		
-	</head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Generate Math</title>
 
-	<body>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
 
-		<div>
-			<!--information about the page-->
-			<p>Math Program</p>
-			<p>by Nima Rahmanian, Jon Jon Mesh, Jaden Elkins, and Daniel Etaat</p>
-		</div>
+  </head>
 
-		<div class="dropdown">
-		  <button onclick="toggleFunc('ClassNames')" class="dropbtn" id = "classButton">Select Class</button>
-		  <div class="dropdown-content" id="ClassNames">
-		    <button onclick = "updateMenu('classButton', 'Algebra 1');" id = "dropOption">Algebra 1</button>
-		    <button onclick = "updateMenu('classButton', 'Algebra 2');" id = "dropOption">Algebra 2</button>
-		    <button onclick = "updateMenu('classButton', 'Calculus A');" id = "dropOption">Calculus A</button>
-		    <button onclick = "updateMenu('classButton', 'Calculus B');" id = "dropOption">Calculus B</button>
+  <body>
 
+    <div class="nav-left">&#8734;</div>
+    <div class="nav-right">
+      Sign In
+    </div>
 
-		  </div>
-		</div>
-
-		<div class="dropdown">
-		  <button onclick="toggleFunc('categoryDependent')" class="dropbtn" id = "topicButton">Select Topic</button>
-		  <div class="dropdown-content" id = "categoryDependent">
-		  	<!--there will be buttons placed here by updateMenu-->
-		  </div>
-		</div>
-
-		<br><br>
-		<div class = "User_input">
-			<label for="fname">First name:</label>
-			<input type="text" id="fname" name="fname"><br><br>
-			<label for="lname">Last name:</label>
-			<input type="text" id="lname" name="lname"><br><br>
-		</div>
-
-		<div class="dropdown">
-		  <button onclick="toggleFunc('NumQuestions')" class="dropbtn" id = "questionButton">Select Number of Questions</button>
-		  <div class="dropdown-content" id="NumQuestions">
-		    <button onclick = "document.getElementById('questionButton').innerHTML = '5 questions';" id = "dropOption">5 questions</button>
-		    <button onclick = "document.getElementById('questionButton').innerHTML = '10 questions';" id = "dropOption">10 questions</button>
-		    <button onclick = "document.getElementById('questionButton').innerHTML = '15 questions';" id = "dropOption">15 questions</button>
-		    <button onclick = "document.getElementById('questionButton').innerHTML = '20 questions';" id = "dropOption">20 questions</button>
+    <div class="container-fluid">
 
 
-		  </div>
-		</div>
+      <div class="title-img"></div>
+      <div class="row title">
+        <div class="col-12">
+          <p class="title-header">Math Generator</p>
+          <p class="title-body">
+            Use this website to generate hundreds of unique math practice problems, tests, or homework sheets.
+            Each problem set is can be customized to every one of your needs. Choose from a wide range of subjects and topics
+            when designing your custom worksheet.
+          </p>
+        </div>
+      </div>
 
-		<button onclick = "generatePDF()">Generate PDF</button>
-		<a href = "html/pdf_canvas.html">Click Me!</a>
+      <div class="row subjects">
+
+        <div class="col-3"></div>
+        <div class="subject-header col-6">
+          Select a Subject
+        </div>
+        <div class="col-3"></div>
+        <div class="col-3"></div>
+        <div class="subject-body col-6">
+          Each subject encompasses a wide range of topics within a specific area of Mathematics.
+          Please select which subject you would like to generate problems for.
+        </div>
+        <div class="col-3"></div>
+
+        <div class="col-3"></div>
+        <div class="col-12 col-xl-2 subject">
+          <button type="button" class="btn-subject btn-subject-padded">
+            <a href="/topics.html?subject=algebra">Subject</a>
+          </button>
+        </div>
+        <div class="col-12 col-xl-2 subject">
+          <button type="button" class="btn-subject btn-subject-padded">
+            <a href="/topics.html?subject=algebra">Subject</a>
+          </button>
+        </div>
+        <div class="col-12 col-xl-2 subject">
+          <button type="button" class="btn-subject btn-subject-padded">
+            <a href="/topics.html?subject=algebra">Subject</a>
+          </button>
+        </div>
+        <div class="col-3"></div>
+
+        <div class="col-3"></div>
+        <div class="col-12 col-xl-2 subject">
+          <button type="button" class="btn-subject btn-subject-padded">
+            <a href="/topics.html?subject=algebra">Subject</a>
+          </button>
+        </div>
+        <div class="col-12 col-xl-2 subject">
+          <button type="button" class="btn-subject btn-subject-padded">
+            <a href="/topics.html?subject=algebra">Subject</a>
+          </button>
+        </div>
+        <div class="col-12 col-xl-2 subject">
+          <button type="button" class="btn-subject btn-subject-padded">
+            <a href="/topics.html?subject=algebra">Subject</a>
+          </button>
+        </div>
+        <div class="col-3"></div>
+
+        <div class="col-3"></div>
+        <div class="col-12 col-xl-2 subject">
+          <button type="button" class="btn-subject btn-subject-padded">
+            <a href="/topics.html?subject=algebra">Subject</a>
+          </button>
+        </div>
+        <div class="col-12 col-xl-2 subject">
+          <button type="button" class="btn-subject btn-subject-padded">
+            <a href="/topics.html?subject=algebra">Subject</a>
+          </button>
+        </div>
+        <div class="col-12 col-xl-2 subject">
+          <button type="button" class="btn-subject btn-subject-padded">
+            <a href="/topics.html?subject=algebra">Subject</a>
+          </button>
+        </div>
+        <div class="col-3"></div>
 
 
-		<script src="script.js"></script>
+      </div>
 
-		<!--Firebase-->
-		<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+      <div class="row footer">
+        <div class="col-12">
 
-
-		<script src="/__/firebase/7.18.0/firebase-app.js"></script>
-		<script src="/__/firebase/7.18.0/firebase-analytics.js"></script>
-		<script src="/__/firebase/7.18.0/firebase-auth.js"></script>
-		<script src="/__/firebase/7.18.0/firebase-firestore.js"></script>
-		<script src="/__/firebase/7.18.0/firebase-database.js"></script>
-
-		<!-- Initialize Firebase -->
-		<script src="/__/firebase/init.js"></script>
+        </div>
+      </div>
 
 
-		<script src="js/firebase.js"></script>
-		<script src="js/headquarters.js"></script>
+    </div>
 
-
-	</body>
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 
 </html>
