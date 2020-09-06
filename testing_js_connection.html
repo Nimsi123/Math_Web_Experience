@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<title>Sharpen your math skills!</title>
+		<link rel="stylesheet" type="text/css" href="css/headquarters.css">
+		
+	</head>
+
+	<body>
+
+		<div>
+			<!--information about the page-->
+			<p>Math Program</p>
+			<p>by Nima Rahmanian, Jon Jon Mesh, Jaden Elkins, and Daniel Etaat</p>
+		</div>
+
+		<div class="dropdown">
+		  <button onclick="toggleFunc('ClassNames')" class="dropbtn" id = "classButton">Select Class</button>
+		  <div class="dropdown-content" id="ClassNames">
+		    <button onclick = "updateMenu('classButton', 'Algebra 1');" id = "dropOption">Algebra 1</button>
+		    <button onclick = "updateMenu('classButton', 'Algebra 2');" id = "dropOption">Algebra 2</button>
+		    <button onclick = "updateMenu('classButton', 'Calculus A');" id = "dropOption">Calculus A</button>
+		    <button onclick = "updateMenu('classButton', 'Calculus B');" id = "dropOption">Calculus B</button>
+
+
+		  </div>
+		</div>
+
+		<div class="dropdown">
+		  <button onclick="toggleFunc('categoryDependent')" class="dropbtn" id = "topicButton">Select Topic</button>
+		  <div class="dropdown-content" id = "categoryDependent">
+		  	<!--there will be buttons placed here by updateMenu-->
+		  </div>
+		</div>
+
+		<br><br>
+		<div class = "User_input">
+			<label for="fname">First name:</label>
+			<input type="text" id="fname" name="fname"><br><br>
+			<label for="lname">Last name:</label>
+			<input type="text" id="lname" name="lname"><br><br>
+		</div>
+
+		<div class="dropdown">
+		  <button onclick="toggleFunc('NumQuestions')" class="dropbtn" id = "questionButton">Select Number of Questions</button>
+		  <div class="dropdown-content" id="NumQuestions">
+		    <button onclick = "document.getElementById('questionButton').innerHTML = '5 questions';" id = "dropOption">5 questions</button>
+		    <button onclick = "document.getElementById('questionButton').innerHTML = '10 questions';" id = "dropOption">10 questions</button>
+		    <button onclick = "document.getElementById('questionButton').innerHTML = '15 questions';" id = "dropOption">15 questions</button>
+		    <button onclick = "document.getElementById('questionButton').innerHTML = '20 questions';" id = "dropOption">20 questions</button>
+
+
+		  </div>
+		</div>
+
+		<button onclick = "generatePDF()">Generate PDF</button>
+		<a href = "html/pdf_canvas.html">Click Me!</a>
+
+
+		<script src="script.js"></script>
+
+		<!--Firebase-->
+		<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+
+
+		<script src="/__/firebase/7.18.0/firebase-app.js"></script>
+		<script src="/__/firebase/7.18.0/firebase-analytics.js"></script>
+		<script src="/__/firebase/7.18.0/firebase-auth.js"></script>
+		<script src="/__/firebase/7.18.0/firebase-firestore.js"></script>
+		<script src="/__/firebase/7.18.0/firebase-database.js"></script>
+
+		<!-- Initialize Firebase -->
+		<script src="/__/firebase/init.js"></script>
+
+
+		<script src="js/firebase.js"></script>
+		<script src="js/headquarters.js"></script>
+
+
+	</body>
+
+</html>
