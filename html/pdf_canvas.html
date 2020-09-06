@@ -14,7 +14,6 @@
 			<div id = "info block" style = "height:15%;">
 
 				<div id = "project and question info" style = "float:left;width:50%;">
-					<!--<p>$\sqrt[2]{324}$</p>-->
 					<p style="line-height:16px">Project Name</p>
 					<p style="line-height:16px">Question</p>
 					<p style="line-height:16px">Topic Name(s)</p>
@@ -62,33 +61,9 @@
 
 		</div>
 
-		<button onclick = "genPDF()">Click Me!</button>
+		<button onclick = "genPDF('Rational Number Operations')">Click Me!</button>
 		<button onclick = "cutFat();">Reduce Me!</button>
 		<button onclick = "dynamicMathJax();">Refresh Me!</button>
-
-		<!--
-		<h1>Question</h1>
-		<p>What is the square root of 2 \sqrt{3}?</p>
-		<p>\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]</p>
-		<p id = "latexx">
-		  When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
-		  \[\sqrt{4}\]
-		</p>
-		<p>\frac{2}{3}</p>
-
-		<div class="footer">
-			<p>Footer</p>
-		</div>
-
-		<h1>Testing</h1>
-		-->
-
-		<!--
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-		-->
 
 
 		<!--Firebase-->
@@ -109,17 +84,5 @@
 		<script src="../js/firebase.js"></script>
 		<script src="../js/pdf_canvas.js"></script>
 
-		
-		<!--MathJax-->
-		<!--
-		<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
-
-		<script type="text/x-mathjax-config">
-		  MathJax.Hub.Config({
-		    tex2jax: { inlineMath: [['$', '$']] },
-		    elements: ['math']
-		  });
-		</script>
-		-->
 	</body>
 </html>
