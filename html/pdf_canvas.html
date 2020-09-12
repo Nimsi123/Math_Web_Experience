@@ -16,7 +16,7 @@
 				<div id = "project and question info" style = "float:left;width:50%;">
 					<p style="line-height:16px">Project Name</p>
 					<p style="line-height:16px">Question</p>
-					<p style="line-height:16px">Topic Name(s)</p>
+					<p style="line-height:16px" id = "topic names">Topic Name(s)</p>
 				</div>
 
 				<div style = "float:left;width:50%;">
@@ -29,6 +29,8 @@
 
 			<!--Dump all the questions here-->
 			<div id = "question_block">
+
+				<p id = "question_instruction0" style = "text-align: left;"></p>
 
 				<div class = "page" style = "height:85%;">
 					<div id = "lqb0" style = "float:left; width:50%;">
@@ -61,7 +63,7 @@
 
 		</div>
 
-		<button onclick = "genPDF('Rational Number Operations')">Click Me!</button>
+		<button onclick = "genPDF('Add Integers (small numbers)')">Click Me!</button>
 		<button onclick = "cutFat();">Reduce Me!</button>
 		<button onclick = "dynamicMathJax();">Refresh Me!</button>
 
@@ -82,7 +84,11 @@
 		<script src="/__/firebase/init.js"></script>
 
 		<script src="../js/firebase.js"></script>
-		<script src="../js/pdf_canvas.js"></script>
+		<script type="text/javascript" src="../js/pdf_helpers.js"></script>
+		<script type="text/javascript" src="../js/pdf_canvas.js"></script>
+		
+		
+
 
 	</body>
 </html>

@@ -1,19 +1,9 @@
 
+
 /*
-footer {
-  	page-break-before: always;
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	color: white;
-	text-align: center;
-
-}
-
-
-#question_block .page {page-break-after:always}
-#answer_block {page-break-before:always}
+#question_block {background-color: #0324fc;}
+#answer_block {background-color: #e31ecc;}
+.page {background-color: #20e6df;}
 */
 
 @media print {
